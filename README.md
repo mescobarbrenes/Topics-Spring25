@@ -8,3 +8,9 @@ For Problem 1, echo.py, I created a list to collect parts for the echoed text, a
 ![Echo.py output] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/echo_image_2.png?raw=true)
 
 For Problem 2, fib.py, I created a timer which establishes the start, end, execution time, and result. I also created a fibonacci function. In the main function, I create x and y lists, x for each fibonacci number calculated (fib(1) to fib(100)) and y for how many seconds it took for each fibonacci number to be calculated, x and y respectively appended to add to the graph.
+
+![Fib.py input] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_image_1.png?raw=true)
+
+![Fib.py output] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_image_2.png?raw=true)
+
+![Fib.py graph] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_graph.png?raw=true)
