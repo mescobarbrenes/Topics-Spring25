@@ -13,6 +13,6 @@ For Problem 2, fib.py, I created a timer which establishes the start, end, execu
 
 ![Fib.py input](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_image_1.png?raw=true)
 
-![Fib.py output] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_image_2.png?raw=true)
+![Fib.py output](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_image_2.png?raw=true)
 
-![Fib.py graph] (https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_graph.png?raw=true)
+![Fib.py graph](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw1/fib_graph.png?raw=true)
