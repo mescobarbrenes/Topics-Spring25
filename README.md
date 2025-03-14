@@ -4,7 +4,7 @@ Repository for **Topics In Computer Science: Web Application Development With Py
 # **MUMUNDO - Music Collection Management App**:
 
 ## **History of MUMUNDO**
-MUMUNDO was originally an idea I came up with in my Human-Computer Interaction class. MUMUNDO is currently a personal music list where users can post music entrys with an artist's name and a description, however, in the future, and my original intention for MUMUMUNDO, was for it to become a community-driven platform to share and discuss music, inspired by current music review sites like AOTY (Artist of the Year) and RYM (Rate Your Music), but also from social medias like Twitter (X) and Reddit. MUMUNDO is derived from taking the first two words of the word music and mundo (world in spanish).
+MUMUNDO was originally an idea I came up with in my Human-Computer Interaction class. MUMUNDO is currently a personal music list where users can post music entrys consisting of a song title, an artist's name and a description, however, in the future, and my original intention for MUMUMUNDO, was for it to become a community-driven platform to share and discuss music, inspired by current music review sites like AOTY (Artist of the Year) and RYM (Rate Your Music), but also from social medias like Twitter (X) and Reddit. MUMUNDO is derived from taking the first two words of the word music and mundo (world in spanish).
 
 ## **Project Overview**
 As stated previously, MUMUNDO is a personal music collection where the user can add a music entry (song title, artist name, and description) to a playlist. The user will be able to see their music collection as they add songs, and they will be able to go back and edit and/or delete their music entrys.
