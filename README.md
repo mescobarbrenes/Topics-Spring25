@@ -27,12 +27,12 @@ The user is also able to delete their music entrys by clicking the delete button
 
 ![Deleting Music Entry Screenshot](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_midterm/midterm_gif_3.gif)
 
-## **Accessing the Data in the API
+## **Accessing the Data in the API**
 As the project stated, the data could be stored in the in-memory data. Once you add entrys to the music collection, you will be able to see all the music entrys in the API under /music.
 
 ![/music Data Screenshot](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_midterm/midterm_data.png?raw=true)
 
-## **Future Prospects For MUMUNDO
+## **Future Prospects For MUMUNDO**
 I would like to be able to expand the adding music feature to where users can add other formats of music (albums, EPs, music videos, live performances) by utilizing the Spotfiy API. I would also like to expand customization on a post, possibly adding a reviewing system (which could further lead to organizing music by rating, or perhaps customizable organization in general) and the use of genre tags. 
 
 As the plan is to have multiple users in the final project, I would like for users to be able to have their own respective profiles, where they are able to add a username, a profile picture, a description for their page, and perhaps their favorite music. As there will also be multiple users on the site, I would especially like to work on the interaction and socialization aspect, where users can like and comment on each others music entry posts, with the possibility to reblog each others posts (it would be really cool to be able to make comments when reblogs like on X).
