@@ -25,7 +25,7 @@ Once the user creates an account, they are redirected to the user login page, wh
 
 ![User Login Error](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_login_2.png?raw=true)
 
-## **Step 3: Logged-In User and Logging Out
+## **Step 3: Logged-In User and Logging Out**
 Once the user has successfully logged-in, they are able to post, view, edit, and delete their posts in the music playlist. If the user chooses to log out of their account, there is a log out button on the top right-hand corner of the page. Once the user logs out, it redirects the user to the login page.
 
 ![Logged-In User 1](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_loggedin_1.png?raw=true)
@@ -33,5 +33,5 @@ Once the user has successfully logged-in, they are able to post, view, edit, and
 ![Logged-In User 2](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_loggedin_2.png?raw=true)
 
 ## **MongoDB Integration**
-When a user has an account, they can be found in the user collection of Cluster0 in MongoDB. For exammple, user snoopy has been added in the user collection.
+When a user has an account, they can be found in the user collection of Cluster0 in MongoDB. For example, user snoopy has been added in the user collection.
 ![MongoDB Integration](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_mongodb.png?raw=true)
