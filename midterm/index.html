@@ -2,27 +2,47 @@
 <html lang = "en">
   <head>
     <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-weight, initial scale = 1.0">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>MUMUNDO</title>
     <link rel = "stylesheet" href = "index.css">
   </head>
+  <body>
+  <button id="auth-btn" class="logout-btn"></button>
   <h1>Music List</h1>
   <div class= "container">
       <input type = "text" id = "title" placeholder = "Title">
       <input type = "text" id = "artist" placeholder = "Artist">
       <input type = "text" id = "description" placeholder = "Description">
       <button onclick = "addMusic()">Add Music</button>
-
       <h2>Music Collection</h2>
       <div id = "music-list"></div>
   </div>
   <script>
       const API_URL = "http://127.0.0.1:8000/music";
+      const token = localStorage.getItem("token");
+
+      const authBtn = document.getElementById("auth-btn");
+
+      function updateAuthButton() {
+          if (token) {
+              authBtn.textContent = "Logout";
+              authBtn.onclick = logout;
+          } else {
+              authBtn.textContent = "Login";
+              authBtn.onclick = () => window.location.href = "login.html";
+          }
+      }
+
+      updateAuthButton();
 
       async function fetchMusic() {
-          const response= await fetch(API_URL);
-          const data= await response.json();
-          const musicList= document.getElementById("music-list");
+          const response = await fetch(API_URL, {
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+          });
+          const data = await response.json();
+          const musicList = document.getElementById("music-list");
           musicList.innerHTML = "";
           data.forEach(music => {
               musicList.innerHTML += `
@@ -32,56 +52,60 @@
                           <small>${music.description}</small>
                       </div>
                       <div class="actions">
-                          <button class="edit-btn" onclick ="editMusic(${music.id}, '${music.title}', '${music.artist}', '${music.description}')">Edit</button>
-                          <button class="delete-btn" onclick ="deleteMusic(${music.id})">Delete</button>
+                          <button class="edit-btn" onclick="editMusic(${music.id}, '${music.title}', '${music.artist}', '${music.description}')">Edit</button>
+                          <button class="delete-btn" onclick="deleteMusic(${music.id})">Delete</button>
                       </div>
                   </div>
               `;
           });
       }
 
-    async function addMusic() {
-    const titleInput = document.getElementById("title");
-    const artistInput = document.getElementById("artist");
-    const descriptionInput = document.getElementById("description");
+      async function addMusic() {
+          const titleInput = document.getElementById("title");
+          const artistInput = document.getElementById("artist");
+          const descriptionInput = document.getElementById("description");
 
-    const title = titleInput.value.trim();
-    const artist = artistInput.value.trim();
-    const description = descriptionInput.value.trim();
+          const title = titleInput.value.trim();
+          const artist = artistInput.value.trim();
+          const description = descriptionInput.value.trim();
 
-    if (!title || !artist) {
-        alert("Please enter both a title and an artist.");
-        return;
-    }
+          if (!title || !artist) {
+              alert("Please enter both a title and an artist.");
+              return;
+          }
 
-    const response = await fetch(API_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            title: title,
-            artist: artist,
-            description: description
-        })
-    });
+          const response = await fetch(API_URL, {
+              method: "POST",
+              headers: { 
+                  "Content-Type": "application/json",
+                  "Authorization": `Bearer ${token}`
+              },
+              body: JSON.stringify({
+                  title: title,
+                  artist: artist,
+                  description: description
+              })
+          });
 
-    if (response.ok) {
-        console.log("Music added successfully!");
-
-        fetchMusic(); //refresh music list
-
-        //clear input fields
-        titleInput.value = "";
-        artistInput.value = "";
-        descriptionInput.value = "";
-
-        console.log("Inputs cleared:", titleInput.value, artistInput.value, descriptionInput.value);
-    } else {
-        console.error("Failed to add music:", response.statusText);
-    }
-}
+          if (response.ok) {
+              console.log("Music added successfully!");
+              fetchMusic();
+              titleInput.value = "";
+              artistInput.value = "";
+              descriptionInput.value = "";
+              console.log("Inputs cleared:", titleInput.value, artistInput.value, descriptionInput.value);
+          } else {
+              console.error("Failed to add music:", response.statusText);
+          }
+      }
 
       async function deleteMusic(id) {
-          await fetch(`${API_URL}/${id}`, { method: "DELETE" });
+          await fetch(`${API_URL}/${id}`, { 
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${token}`  
+            }
+          });
           fetchMusic();
       }
 
@@ -93,7 +117,10 @@
           if (newTitle && newArtist && newDescription) {
               await fetch(`${API_URL}/${id}`, {
                   method: "PUT",
-                  headers: { "Content-Type": "application/json" },
+                  headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                  },
                   body: JSON.stringify({
                       id: id,
                       title: newTitle,
@@ -105,7 +132,16 @@
           }
       }
 
-      fetchMusic(); //load music list on page load
+      if (token) {
+          fetchMusic();
+      }
+
+      function logout() {
+        localStorage.removeItem("token");
+        window.location.href = "login.html";
+      }
+
   </script>
   </body>
 </html>
+

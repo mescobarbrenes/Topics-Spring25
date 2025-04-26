@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+  <title>MUMUNDO Sign Up</title>
+  <link rel = "stylesheet" href = "index.css">
+</head>
+<body>
+  <div class = "container">
+    <h2>Sign Up</h2>
+    <input type = "text" id = "username" placeholder = "Username">
+    <input type = "password" id = "password" placeholder = "Password">
+    <button onclick="signup()">Sign Up</button>
+  </div>
+  <script>
+    async function signup() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      if (!username || !password) {
+        alert("Please fill out all fields.");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("username", username);
+      formData.append("password", password);
+
+      const response = await fetch("http://127.0.0.1:8000/auth/register", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert("User created successfully");
+        // Optionally redirect to login page after successful signup
+        window.location.href = "login.html"; 
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.detail} || "Unknown error"}`);
+      }
+    }
+  </script>
+</body>
+</html>
