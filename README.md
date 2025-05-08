@@ -40,3 +40,14 @@ When a user has an account, they can be found in the user collection of Cluster0
   uvicorn mumundo.backend.main:app --reload
 ```
 
+Install requirements
+
+Node.js (v18 or later recommended)
+https://nodejs.org/en
+
+then run the following command to install all required packages listed in package.json
+
+```bash
+npm install
+```
+
