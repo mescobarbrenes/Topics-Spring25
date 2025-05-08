@@ -36,8 +36,12 @@ Once the user has successfully logged-in, they are able to post, view, edit, and
 When a user has an account, they can be found in the user collection of Cluster0 in MongoDB. For example, user snoopy has been added in the user collection.
 ![MongoDB Integration](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_mongodb.png?raw=true)
 
-```bash 
-  uvicorn mumundo.backend.main:app --reload
+## **Initalizing MUMUNDO (on Windows)**
+Start with creating a virtual environment
+
+```bash
+python -m venv venv
+.\venv\Scripts\activate
 ```
 
 Install requirements
@@ -50,4 +54,3 @@ then run the following command to install all required packages listed in packag
 ```bash
 npm install
 ```
-
