@@ -35,3 +35,5 @@ Once the user has successfully logged-in, they are able to post, view, edit, and
 ## **MongoDB Integration**
 When a user has an account, they can be found in the user collection of Cluster0 in MongoDB. For example, user snoopy has been added in the user collection.
 ![MongoDB Integration](https://github.com/mescobarbrenes/Topics-Spring25/blob/main/images_hw4/hw4_mongodb.png?raw=true)
+
+<pre> \`\`\`bash uvicorn mumundo.backend.main:app --reload \`\`\` </pre>
