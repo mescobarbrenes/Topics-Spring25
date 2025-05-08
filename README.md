@@ -44,13 +44,22 @@ python -m venv venv
 .\venv\Scripts\activate
 ```
 
-Install requirements
-
-Node.js (v18 or later recommended)
+Install Node.js (v18 or later recommended)
 https://nodejs.org/en
 
 then run the following command to install all required packages listed in package.json
 
 ```bash
 npm install
+```
+
+To access MUMUNDO, run the following commands
+```bash
+cd mumundo
+cd frontend
+npm run dev
+
+To access MUMUNDO FastAPI, run the following command
+```bash
+uvicorn mumundo.backend.main:app --reload
 ```
