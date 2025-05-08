@@ -58,6 +58,7 @@ To access MUMUNDO, run the following commands
 cd mumundo
 cd frontend
 npm run dev
+```
 
 To access MUMUNDO FastAPI, run the following command
 ```bash
